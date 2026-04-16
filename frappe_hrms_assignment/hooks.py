@@ -44,6 +44,10 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+    "Salary Structure Assignment": "public/js/doctype_js/custom_salary_structure_assignment.js",
+    "Employee":"public/js/doctype_js/custom_employee.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -144,6 +148,12 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events ={
+    "Salary Slip":{
+        "before_insert":"frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_salary_slip.total_exemption_amount_cal",
+        "before_save":"frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_salary_slip.total_exemption_amount_cal",
+    },
+}
 
 # Scheduled Tasks
 # ---------------
@@ -165,6 +175,19 @@ app_license = "mit"
 # 		"frappe_hrms_assignment.tasks.monthly"
 # 	],
 # }
+scheduler_events = {
+    "cron": {
+        "*/1 * * * *": [
+            "frappe_hrms_assignment.crypto_management.api.crypto.fetch_crypto_prices"
+        ],
+        "0 8 * * *": [
+            "frappe_hrms_assignment.api.update_employee_confirmation"
+        ],
+        "0 8 * * *": [
+            "frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_employee_separation.generate_experience_letter_scheduler"
+        ]
+    }
+}
 
 # Testing
 # -------
@@ -241,6 +264,14 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+fixtures = [
+    {
+        "doctype": "Web Form",
+        "filters": [
+            ["name", "=", "job-application"]
+        ]
+    }
+]
 
 # Translation
 # ------------
