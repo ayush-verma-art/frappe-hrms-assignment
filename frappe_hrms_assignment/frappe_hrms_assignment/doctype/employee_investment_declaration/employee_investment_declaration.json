@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EID-.#####",
+ "creation": "2026-04-15 17:31:04.965007",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_6e6t",
+  "amended_from",
+  "employee",
+  "employee_name",
+  "column_break_nvqw",
+  "company",
+  "column_break_yojn",
+  "financial_year",
+  "section_break_zkqn",
+  "investment_details",
+  "section_break_hsxd",
+  "total_section_80c",
+  "column_break_uehl",
+  "total_section_80d",
+  "column_break_dcii",
+  "total_other_exemptions",
+  "section_break_xtpi",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6e6t",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Investment Declaration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nvqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_yojn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Financial Year",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zkqn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "investment_details",
+   "fieldtype": "Table",
+   "label": "Investment Details",
+   "options": "Investment Details"
+  },
+  {
+   "fieldname": "section_break_hsxd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_uehl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dcii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_section_80c",
+   "fieldtype": "Currency",
+   "label": "Total(Section 80C)"
+  },
+  {
+   "fieldname": "total_other_exemptions",
+   "fieldtype": "Currency",
+   "label": "Total(Other Exemptions)"
+  },
+  {
+   "fieldname": "total_section_80d",
+   "fieldtype": "Currency",
+   "label": "Total(Section 80D)"
+  },
+  {
+   "fieldname": "section_break_xtpi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-15 22:48:16.086552",
+ "modified_by": "Administrator",
+ "module": "Frappe Hrms Assignment",
+ "name": "Employee Investment Declaration",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
