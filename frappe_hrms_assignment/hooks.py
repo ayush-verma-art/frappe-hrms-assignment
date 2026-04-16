@@ -150,7 +150,7 @@ doctype_js = {
 # }
 doc_events ={
     "Salary Slip":{
-        "before_insert":"frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_salary_slip.total_exemption_amount_cal",
+        "validate":"frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_salary_slip.total_exemption_amount_cal",
         "before_save":"frappe_hrms_assignment.frappe_hrms_assignment.doc_events.custom_salary_slip.total_exemption_amount_cal",
     },
 }
